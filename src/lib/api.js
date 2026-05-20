@@ -118,7 +118,7 @@ JSON format:
     : `Search broadly for currently posted NYC jobs matching the candidate profile across all eligible sectors. Return 15-25 results as a JSON array only.`;
 
   const data = await callAnthropic({
-    model: "claude-sonnet-4-20250514",
+    model: "claude-sonnet-4-5",
     max_tokens: 16000,
     thinking: {
       type: "enabled",
@@ -161,7 +161,7 @@ export async function generateOutreachDraft({ job, profile, resumeText, type }) 
     : `Write a concise J-1 host outreach email. Mention recent Edinburgh graduation (July 2026), J-1 intern eligibility, that the host wouldn't need to run an H-1B process, and willingness to arrange sponsorship through a designated sponsor. Under 200 words. Include subject line.`;
 
   const data = await callAnthropic({
-    model: "claude-sonnet-4-20250514",
+    model: "claude-sonnet-4-5",
     max_tokens: 1000,
     system: "You help a UK/Irish Edinburgh Politics graduate draft personalised outreach emails. Professional but warm tone. Specific to the organisation. Concise.",
     messages: [{
@@ -181,7 +181,7 @@ Return subject line then email body as plain text only.`
 
 export async function analyzeDocument(text, type) {
   const data = await callAnthropic({
-    model: "claude-sonnet-4-20250514",
+    model: "claude-sonnet-4-5",
     max_tokens: 800,
     messages: [{
       role: "user",
